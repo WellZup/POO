@@ -2,7 +2,7 @@ package Exercicio1;
 
 public class Hyundai extends Carros {
     public Hyundai() {
-        super("Hyundai Tucson", 2005, 25.000, "Azul", 4);
+        super("Hyundai Tucson", 2005, 25000, "Azul", 4);
     }
 
     @Override
@@ -14,8 +14,12 @@ public class Hyundai extends Carros {
 
     @Override
     void freio() {
-        velocidade -= 2;
-        System.out.println("Freando... minha velocidade está em " + velocidade + " km/h");
+        if (velocidade < 2) {
+            System.out.println("Carro parado.");
+        } else {
+            velocidade -= 2;
+            System.out.println("Freando... minha velocidade está em " + velocidade + " km/h");
+        }
     }
 
     @Override

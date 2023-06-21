@@ -2,7 +2,7 @@ package Exercicio1;
 
 public class Renault extends Carros {
     public Renault () {
-        super("Sandero", 2008, 23.000, "Azul", 4);
+        super("Sandero", 2008, 23000, "Azul", 4);
     }
 
 
@@ -16,6 +16,9 @@ public class Renault extends Carros {
 
     @Override
     void freio() {
+        if (velocidade < 5){
+            System.out.println("Carro parado.");
+        }
         velocidade -= 5;
         System.out.println("Freando... minha velocidade está em " + velocidade + " km/h");
     }

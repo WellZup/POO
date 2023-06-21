@@ -2,12 +2,12 @@ package Exercicio1;
 
 abstract class Carros {
 
-    private String marca;
-    private int ano;
-    private double valor;
-    private String cor;
-    private int portas;
-    public double velocidade;
+     String marca;
+     int ano;
+     double valor;
+     String cor;
+     int portas;
+     double velocidade;
 
     public Carros(String marca, int ano, double valor, String cor, int portas) {
         this.marca = marca;
@@ -17,11 +17,6 @@ abstract class Carros {
         this.portas = portas;
 
     }
-
-
-
-
-
 
     public void iniciarMotor() {
 
@@ -34,7 +29,7 @@ abstract class Carros {
 
 
         public void mostraCarro() {
-            System.out.printf("---------INFORMAÇÕES DO CARRO--------");
+            System.out.print("---------INFORMAÇÕES DO CARRO--------");
             System.out.printf("\n---------Marca: " + marca + "----------");
             System.out.printf("\n---------Ano:" + ano + "----------");
             System.out.printf("\n---------Valor: R$" + valor + "----------");

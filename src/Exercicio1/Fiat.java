@@ -16,8 +16,12 @@ public  class Fiat extends Carros {
 
     @Override
     void freio() {
-        velocidade -= 6;
-        System.out.println("Freando... minha velocidade está em " + velocidade + " km/h");
+        if (velocidade < 6){
+            System.out.println("Carro parado.");
+        } else {
+            velocidade -= 6;
+            System.out.println("Freando... minha velocidade está em " + velocidade + " km/h");
+        }
     }
 
     @Override

@@ -47,19 +47,19 @@ public class Main {
         do {
             System.out.print("Data de Admissão (formato: dd/mm/aaaa): ");
             dataAdmissao = scanner.nextLine();
-            if (!validarDataAdmissao(dataAdmissao)) {
+            if (validarDataAdmissao(dataAdmissao)) {
                 System.out.println("Data inválida. Não é permitido adicionar uma data no futuro.");
             }
-        } while (!validarDataAdmissao(dataAdmissao));
+        } while (validarDataAdmissao(dataAdmissao));
 
         double salario;
         do {
             System.out.print("Salário: ");
             salario = Double.parseDouble(scanner.nextLine());
-            if (!validarSalario(salario)) {
+            if (validarSalario(salario)) {
                 System.out.println("Salário inválido. O salário mínimo permitido é R$ 700,00.");
             }
-        } while (!validarSalario(salario));
+        } while (validarSalario(salario));
 
         return new Funcionario(nome, dataAdmissao, salario);
     }
@@ -77,10 +77,10 @@ public class Main {
         LocalDate dataAtual = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate dataInformada = LocalDate.parse(dataAdmissao, formatter);
-        return dataInformada.isBefore(dataAtual) || dataInformada.isEqual(dataAtual);
+        return !dataInformada.isBefore(dataAtual) && !dataInformada.isEqual(dataAtual);
     }
 
     public static boolean validarSalario(double salario) {
-        return salario >= 700.0;
+        return !(salario >= 700.0);
     }
 }
